@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "tree_sitter_http",
+      "camelcase": "TreeSitterHttp",
+      "title": "TreeSitterHttp",
+      "scope": "source.tree_sitter_http",
+      "file-types": ["tree_sitter_http"],
+      "injection-regex": "^tree_sitter_http$",
+      "class-name": "TreeSitterTreeSitterHttp"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Http request for nvim",
+    "authors": [
+      {
+        "name": "Yon Chando",
+        "email": "von.chando@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/yonchando/tree-sitter-http"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
+
