@@ -35,4 +35,3 @@ Table permission {
   name string
 }
 
-
