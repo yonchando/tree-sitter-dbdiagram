@@ -1,37 +1,24 @@
-Table room {
-  id bigint primary key unique
-  name string
-  created_at timestamp
-  created_by bigint
-  updated_at timestamp
-  updated_by bigint
+Table public.products as P  {
+    id bigint pk
 }
 
-Table user {
-  id bigint
-  username varchar(155)
-  password nvarchar(255)
-  alias varchar(255)
-  status string
-  created_at timestamp
-  created_by bigint
-  updated_at timestamp
-  updated_by bigint
+Table app.users as AU {
+    id int
+}
+
+Table user as U {
+    id bigint [unique, pk, not null,ref: < user_role.user_id  ]
+    status int [default: 'end']
+    created_at timestamp [default: `now()`]
+    updated_at timestamp [default: `now()`]
+}
+
+Table user_role {
+    id bigint [pk]
+    user_id bigint [ref: > U.id, null, default: 'defualt']
 }
 
 Table role {
-  id bigint
-  name varchar(155)
-  status string
-  created_at timestamp
-  created_by bigint
-  updated_at timestamp
-  updated_by bigint
+    id bigint unique
+    name varchar(255) [unique]
 }
-
-Table permission {
-  id bigint
-  code string unique
-  name string
-}
-

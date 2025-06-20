@@ -1,6 +1,16 @@
-(table) @type
+(keyword_table) @function.builtin
 
-(table_name) @string.special.url
+(table_name) @variable
 
 (column) @tag
-(type) @tag.builtin
+
+(type) @type
+
+(length) @attribute
+
+(key) @function.builtin
+
+(setting_key) @character
+
+(bracket) @variable
+
