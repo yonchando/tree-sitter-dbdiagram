@@ -2,9 +2,13 @@
 
 tree-sitter-dbdiagram is syntax highlighting for dbdiagram.io in neovim
 
+## Requirement
+- [Tree sitter installation](https://tree-sitter.github.io/tree-sitter/creating-parsers/1-getting-started.html#installation) `tree-sitter-cli` 
+- Neovim 0.11+
+
 ## Install parsers
 
-(NvimTresitter)[https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers]
+[NvimTresitter](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers)
 
 ```lua
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
