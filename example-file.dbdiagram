@@ -1,5 +1,5 @@
 Table room {
-  id bigint
+  id bigint primary key unique
   name string
   created_at timestamp
   created_by bigint

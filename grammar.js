@@ -45,14 +45,17 @@ module.exports = grammar({
       $.length,
     ),
 
-    length: () => seq(
-      "(",
+    length: ($) => seq(
+      $.bracket,
       /\d+/,
-      ")"
+      $.bracket
     ),
+
+    bracket: () => choice('(', ')', '{', '}', '[', ']'),
 
     constrant: () => choice(
       'unique', 'primary key', 'not null',
+      'check',
       'null'
     ),
   },
