@@ -84,6 +84,7 @@ module.exports = grammar({
         "increment",
         "PK",
         "pk",
+        "primary key",
         $.key_value,
       ),
 
