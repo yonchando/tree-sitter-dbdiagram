@@ -140,19 +140,37 @@
       "name": "identifier"
     },
     "body": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "column"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "column"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "type"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "type"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "setting"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "column"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "type"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "setting"
+            }
+          ]
         }
       ]
     },
@@ -278,6 +296,18 @@
             },
             {
               "type": "STRING",
+              "value": "int"
+            },
+            {
+              "type": "STRING",
+              "value": "char"
+            },
+            {
+              "type": "STRING",
+              "value": "decimal"
+            },
+            {
+              "type": "STRING",
               "value": "nvarchar"
             }
           ]
@@ -287,8 +317,30 @@
           "name": "bracket"
         },
         {
-          "type": "SYMBOL",
-          "name": "length"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "length"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "length"
+                },
+                {
+                  "type": "STRING",
+                  "value": ","
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "length"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -380,6 +432,10 @@
         {
           "type": "STRING",
           "value": "pk"
+        },
+        {
+          "type": "STRING",
+          "value": "primary key"
         },
         {
           "type": "SYMBOL",

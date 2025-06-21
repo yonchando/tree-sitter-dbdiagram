@@ -34,7 +34,8 @@ module.exports = grammar({
 
     alias: ($) => $.identifier,
 
-    body: ($) => seq($.column, $.type, $.setting),
+    body: ($) =>
+      choice(seq($.column, $.type), seq($.column, $.type, $.setting)),
 
     column: () => /[a-zA-Z_][a-zA-Z0-9_]*/,
 
@@ -68,7 +69,12 @@ module.exports = grammar({
       ),
 
     _type_length: ($) =>
-      seq(choice("varchar", "nvarchar"), $.bracket, $.length, $.bracket),
+      seq(
+        choice("varchar", "int", "char", "decimal", "nvarchar"),
+        $.bracket,
+        choice($.length, seq($.length, ",", $.length)),
+        $.bracket,
+      ),
 
     setting: ($) =>
       choice(seq("[", repeat($.setting_keys), "]"), $.setting_key),

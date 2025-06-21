@@ -415,6 +415,10 @@
     "named": false
   },
   {
+    "type": "primary key",
+    "named": false
+  },
+  {
     "type": "ref",
     "named": false
   },
