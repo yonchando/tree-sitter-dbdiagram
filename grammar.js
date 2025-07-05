@@ -9,7 +9,7 @@
 //
 // @ts-ignore
 module.exports = grammar({
-  name: "dbdiagram",
+  name: "dbml",
   conflicts: ($) => [[$.table_name, $.schema]],
   rules: {
     source_file: ($) => repeat($.table),
